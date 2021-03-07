@@ -9,5 +9,13 @@
   "Comment": {
     "body": "string",
     "post": "Post"
+  },
+  "Tools": {
+    "id": "string",
+    "name": "string",
+    "comment": "string"
+  },
+  "Projects": {
+    "Tool": ["Tools"]
   }
 }
