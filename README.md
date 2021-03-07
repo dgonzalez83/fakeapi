@@ -36,7 +36,7 @@ For example:
 
 For REST, based on the previous config, the following routes will be created:
 
-```bash
+```
 GET https://mockend.com/org/repo/posts
 GET https://mockend.com/org/repo/posts/<id>
 GET https://mockend.com/org/repo/comments
@@ -47,7 +47,7 @@ Routes can take query parameters, see below.
 
 GraphQL, will be available at:
 
-```bash
+```
 https://mockend.com/org/repo/graphql
 ```
 
@@ -55,7 +55,7 @@ https://mockend.com/org/repo/graphql
 
 Simply add `tree/:branch_name` to your URL, for example:
 
-```bash
+```
 /org/repo/tree/my-awesome-feature/graphql
 ```
 
@@ -63,8 +63,33 @@ Simply add `tree/:branch_name` to your URL, for example:
 
 ### REST
 
-...
+Query parameters can be used to filter, sort and paginate lists:
+
+- `_eq` `_ne`
+        equal, not equal
+- `_gt` _`lt`
+        greater than, lower than
+- `_order`
+        sort data (`asc` `desc`)
+- `limit` `offset`
+        use them to paginate your results
+
+For example:
+
+```
+GET /posts?date_order=desc
+
+GET /posts
+    ?views_gt=10
+    &published_eq=true
+    &views_order=desc
+    &limit=5
+```
 
 ### GraphQL
 
-...
+A GraphiQL interface, with specific documentation for your API, can be found directly at:
+
+```
+https://mockend.com/org/repo/graphql
+```
